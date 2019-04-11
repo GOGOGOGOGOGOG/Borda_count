@@ -14,7 +14,7 @@
 #define SCORE_MAX 100
 #define SCORE_MIN 1
 #define RANd_MAX 2147483647
-#define User_number 5
+#define User_number 10
 char a[2]=  {'A',0};
 char b[2] = {'B',0};
 char c[2] = {'C',0};
@@ -115,6 +115,11 @@ int main(int argc, char const *argv[])
     data user2[DATA_SIZE];
     data user3[DATA_SIZE];
     data user4[DATA_SIZE];
+    data user6[DATA_SIZE];
+    data user7[DATA_SIZE];
+    data user8[DATA_SIZE];
+    data user9[DATA_SIZE];
+    data user10[DATA_SIZE];
     data user5[DATA_SIZE];
 
     data receive_letterA;
@@ -129,7 +134,7 @@ int main(int argc, char const *argv[])
     data receive_letterJ;
     data receive_letter[10];
 
-   data *ptr[User_number] = {user1,user2,user3,user4,user5};
+   data *ptr[User_number] = {user1,user2,user3,user4,user5,user6,user7,user8,user9,user10};
    
   for(int a=0;a<User_number;a++){
     for(int i = 0; i < DATA_SIZE; i++) {
@@ -234,7 +239,9 @@ uint32_t const arr_size = ARRAY_SIZE(arr);
 
     int32_t res[arr_size];
     make_list(arr_size, arr, (ele_t *)(&Nil), mergesort_toarray, res);
-
+ 
+ 
+   printf("the merge sort\n");
     void_map_array(print_val, arr_size, res);
     int32_t *res_ptr = res;
     int a_same=0;
@@ -309,6 +316,8 @@ uint32_t const arr_size = ARRAY_SIZE(arr);
       printf("done\n");
       res_ptr++;
     }   
+
+    printf("the qsort\n");
      qsort(receive_letter, letter_length, sizeof(receive_letter[0]), cmp_data);
      print1_data(receive_letter,letter_length);
      printf("\n");
